@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Text & Audio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #FAF3E0;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #FF69B4;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid #FF69B4;
+            resize: none;
+            outline: none;
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #FF69B4;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #FF1493;
+        }
+        .audio-controls {
+            margin-top: 10px;
+        }
+        #downloadLink {
+            display: none;
+            text-decoration: none;
+            background: #FF69B4;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .act {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    color:light aqua;
+    background-color: pink; 
+    text-decoration: none;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.act:hover {
+    background-color: darkgray;
+}
+    </style>
+</head>
+<body>
+
+    <h1>💖 Save Your Message & Voice Note 💖</h1>
+
+    <div class="container">
+        <h2>✍️ Write Your Message</h2>
+        <textarea id="message" placeholder="You are not just my friend, you are my chosen family. Through every smile, every tear, every moment of joy, and every tough time, you've been by my side. Life is brighter, funnier, and more meaningful because of you. No matter where life takes us, I know our bond will remain unbreakable. Thank you for being you, for understanding me, for lifting me up, and for making every day special. Forever grateful to have you in my life! 💖✨""></textarea>
+        <button onclick="saveText()">Save Message</button>
+        <button onclick="clearText()">Clear Message</button>
+
+    </div>
+
+    <script>
+        // Load saved message from Local Storage when the page loads
+        document.addEventListener("DOMContentLoaded", function() {
+            let savedMessage = localStorage.getItem("bestieMessage");
+            if (savedMessage) {
+                document.getElementById("message").value = savedMessage;
+            }
+        });
+
+        // Save written text to Local Storage
+        function saveText() {
+            let messageText = document.getElementById("message").value;
+            localStorage.setItem("bestieMessage", messageText);
+            alert("Message saved! ❤️");
+        }
+
+        // Clear text from input and local storage
+        function clearText() {
+            document.getElementById("message").value = "";
+            localStorage.removeItem("bestieMessage");
+            alert("Message cleared!");
+        }
+    </script>
+    <div>
+        <a href="hidden surprise.html" class="act">Click Here<br>
+        for hidden surpise</a>
+    </div>
+
+</body>
+</html>
